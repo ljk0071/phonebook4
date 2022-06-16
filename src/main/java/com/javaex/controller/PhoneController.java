@@ -48,7 +48,7 @@ public class PhoneController {
 
 	@RequestMapping(value = "/write", method = { RequestMethod.GET, RequestMethod.POST })
 	public String write(@ModelAttribute PersonVo pVo) {
-		cw = pService.addPerson(pVo);
+		cw = pService.doAddPerson(pVo);
 		System.out.println(cw);
 		// 리다이렉트
 
@@ -66,7 +66,7 @@ public class PhoneController {
 	@RequestMapping(value = "/update", method = { RequestMethod.GET, RequestMethod.POST })
 	public String update(@ModelAttribute PersonVo pVo) {
 		System.out.println("PhoneController>update()");
-		cu = pService.updatePerson(pVo);
+		cu = pService.doUpdatePerson(pVo);
 		System.out.println(cu);
 		return "redirect:/list";
 	}
@@ -74,7 +74,7 @@ public class PhoneController {
 	@RequestMapping(value = "/delete/{personId}", method = { RequestMethod.GET, RequestMethod.POST })
 	public String delete(@PathVariable("personId") int personId) {
 		System.out.println("PhoneController>delete()");
-		cd = pService.deletePerson(personId);
+		cd = pService.doDeletePerson(personId);
 		System.out.println(cd);
 		return "redirect:/list";
 	}

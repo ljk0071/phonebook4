@@ -26,15 +26,15 @@ public class PhoneService {
 		return pDao.Select(personId);
 	}
 
-	public int addPerson(PersonVo pVo) {
+	public int doAddPerson(PersonVo pVo) {
 		return pDao.Insert(pVo);
 	}
 
-	public int updatePerson(PersonVo pVo) {
+	public int doUpdatePerson(PersonVo pVo) {
 		return pDao.Update(pVo);
 	}
 
-	public int deletePerson(int personId) {
+	public int doDeletePerson(int personId) {
 		return pDao.Delete(personId);
 	}
 }
