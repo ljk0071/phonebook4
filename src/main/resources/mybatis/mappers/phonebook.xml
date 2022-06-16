@@ -3,7 +3,7 @@
 
 <mapper namespace="phonebook">
 	
-	<select id="SelectAll" resultType="com.javaex.vo.PersonVo">
+	<select id="SelectAll" resultType="PersonVo">
 		<![CDATA[
 		select person_id as personId
 				,name
@@ -14,7 +14,7 @@
 		]]>
 	</select>
 	
-	<select id="Select" parameterType="int" resultType="com.javaex.vo.PersonVo">
+	<select id="Select" parameterType="int" resultType="PersonVo">
 		<![CDATA[
 		select person_id as personId
 				,name
@@ -25,7 +25,7 @@
 		]]>
 	</select>
 	
-	<select id="Search" parameterType="com.javaex.vo.PersonVo" resultType="com.javaex.vo.PersonVo">
+	<select id="Search" parameterType="PersonVo" resultType="com.javaex.vo.PersonVo">
 		<![CDATA[
 		select person_id 
 				,name   
@@ -56,7 +56,7 @@
 		]]>
 	</select>		
 	
-	<insert id="Insert" parameterType="com.javaex.vo.PersonVo">
+	<insert id="Insert" parameterType="PersonVo">
 		<![CDATA[
 		insert into person
 		values(seq_person_id.nextval
@@ -66,13 +66,13 @@
 		]]>
 	</insert>
 	
-	<update id="Update" parameterType="com.javaex.vo.PersonVo">
+	<update id="Update" parameterType="PersonVo">
 		<![CDATA[
-			update person
-					set name = #{name}
-					,hp = #{hp}
-					,company = #{company}
-			where person_id = #{personId}
+		update person
+		set name = #{name}
+			,hp = #{hp}
+			,company = #{company}
+		where person_id = #{personId}
 		]]>
 		
 	</update>

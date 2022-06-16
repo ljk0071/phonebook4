@@ -26,7 +26,7 @@ public class PhoneService {
 		return pDao.Select(personId);
 	}
 
-	public int NewPerson(PersonVo pVo) {
+	public int addPerson(PersonVo pVo) {
 		return pDao.Insert(pVo);
 	}
 

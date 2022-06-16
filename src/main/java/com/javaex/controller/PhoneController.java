@@ -48,7 +48,7 @@ public class PhoneController {
 
 	@RequestMapping(value = "/write", method = { RequestMethod.GET, RequestMethod.POST })
 	public String write(@ModelAttribute PersonVo pVo) {
-		cw = pService.NewPerson(pVo);
+		cw = pService.addPerson(pVo);
 		System.out.println(cw);
 		// 리다이렉트
 

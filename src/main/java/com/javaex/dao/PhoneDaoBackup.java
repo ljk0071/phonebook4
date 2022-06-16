@@ -257,7 +257,7 @@ public class PhoneDaoBackup {
 //	}
 
 	public PersonVo Select(int pId) {
-		PersonVo pVo = sqlSession.selectOne("phonebook.Select");
+		PersonVo pVo = sqlSession.selectOne("phonebook.Select", pId);
 		return pVo;
 	}
 
@@ -292,7 +292,7 @@ public class PhoneDaoBackup {
 //	}
 
 	public int Update(PersonVo pVo) {
-		count += sqlSession.update("phonebook.Update");
+		count += sqlSession.update("phonebook.Update", pVo);
 		return count;
 	}
 
